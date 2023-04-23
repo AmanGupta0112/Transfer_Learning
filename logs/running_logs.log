@@ -1,0 +1,19 @@
+[2023-04-23 13:01:34,676: INFO: 01_base_moel_creation]: 
+********************
+[2023-04-23 13:01:34,676: INFO: 01_base_moel_creation]: >>>>> stage Creating Base Model started <<<<<
+[2023-04-23 13:01:34,682: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2023-04-23 13:01:36,376: INFO: 01_base_moel_creation]: >>>>> stage Creating Base Model completed!<<<<<
+
+[2023-04-23 13:02:08,026: INFO: 01_base_moel_creation]: 
+********************
+[2023-04-23 13:02:08,026: INFO: 01_base_moel_creation]: >>>>> stage Creating Base Model started <<<<<
+[2023-04-23 13:02:08,032: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2023-04-23 13:02:09,996: INFO: 01_base_moel_creation]: >>>>> stage Creating Base Model completed!<<<<<
+
+[2023-04-23 13:04:52,089: INFO: 01_base_moel_creation]: 
+********************
+[2023-04-23 13:04:52,090: INFO: 01_base_moel_creation]: >>>>> stage Creating Base Model started <<<<<
+[2023-04-23 13:04:52,094: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2023-04-23 13:04:53,605: INFO: 01_base_moel_creation]: Model Summary : None
+[2023-04-23 13:04:53,661: INFO: 01_base_moel_creation]: >>>>> stage Creating Base Model completed!<<<<<
+

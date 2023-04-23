@@ -12,6 +12,10 @@ generic-python-project-template
 ```bash
 conda create --prefix ./env python=3.7 -y
 ```
+OR
+```bash
+python3 -m venv venv
+```
 
 ```bash
 conda activate ./env
@@ -19,6 +23,10 @@ conda activate ./env
 OR
 ```bash
 source activate ./env
+```
+OR
+```bash
+source venv/bin/activate
 ```
 
 ### STEP 04- install the requirements

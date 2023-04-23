@@ -1,8 +1,37 @@
-# It contains all the configs required in the project
+# # It contains all the configs required in the project
+
+# artifacts:
+#   KEY: value
+
+# source_data_dirs:
+#   - path_to_data_1
+#   - path_to_data_1
+
+
+params:
+  epochs: 30
+  seed: 2021
+  batch_size: 32
+  no_classes: 10
+  input_shape: [28,28]
+  loss_function: sparse_categorical_crossentropy 
+  metrics: accuracy
+  optimizer: SGD
+  validation_datasize: 5000
+
+  test: testKeywords
 
 artifacts:
-  KEY: value
+  artifacts_dir: artifacts
+  model_dir: models
+  plots_dir: plots
+  checkpoint_dir: checkpoints
+  model_name : classifier
+  plot_name : classifier.png
+  prediction_image_dir: images
+  checkpoint_model: model_ckpt
 
-source_data_dirs:
-  - path_to_data_1
-  - path_to_data_1
+logs:
+  logs_dir: logs
+  general_logs: general_logs
+  tensorboard_logs: tensorboard_logs
