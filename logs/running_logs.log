@@ -17,3 +17,11 @@
 [2023-04-23 13:04:53,605: INFO: 01_base_moel_creation]: Model Summary : None
 [2023-04-23 13:04:53,661: INFO: 01_base_moel_creation]: >>>>> stage Creating Base Model completed!<<<<<
 
+[2023-04-23 13:23:36,863: INFO: 01_base_model_creation]: 
+********************
+[2023-04-23 13:23:36,864: INFO: 01_base_model_creation]: >>>>> stage Creating Base Model started <<<<<
+[2023-04-23 13:23:36,870: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2023-04-23 13:23:38,121: INFO: 01_base_model_creation]: Model Summary : None
+[2023-04-23 13:27:01,502: INFO: 01_base_model_creation]: Base Model File is saved: classifier_20230423132701.h5
+[2023-04-23 13:27:20,389: INFO: 01_base_model_creation]: >>>>> stage Creating Base Model completed!<<<<<
+

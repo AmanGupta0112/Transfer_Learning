@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from tensorflow.keras import models
 import numpy as np
-
+import logging
 
 def get_data(validation_datasize):
     mnist = tf.keras.datasets.mnist
@@ -47,6 +47,7 @@ def predict(ARTIFACT_DIR, MODEL_DIR, MODEL_NAME, PLOT_DIR, PREDICTION_IMAGE, x_t
     model = models.load_model(
         f"{ARTIFACT_DIR}/{MODEL_DIR}/{MODEL_NAME}")
     model.evaluate(x_test, y_test)
+    logging.info(f"Model evaluation : {model.evaluate(x_test, y_test)}")
     x_new = x_test[:30]
     y_prob = model.predict(x_new)
     y_prob.round(3)
