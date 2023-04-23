@@ -27,7 +27,9 @@ artifacts:
   plots_dir: plots
   checkpoint_dir: checkpoints
   model_name : classifier
+  new_model_name : retrained_classifier
   plot_name : classifier.png
+  new_plot_name : retrained_classifier.png
   prediction_image_dir: images
   checkpoint_model: model_ckpt
 

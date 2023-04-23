@@ -26,10 +26,10 @@ def save_model(model, ARTIFACT_DIR, MODEL_DIR, MODEL_NAME):
     model_dir = f"{ARTIFACT_DIR}/{MODEL_DIR}"
     os.makedirs(model_dir, exist_ok=True)
 
-    file_name = filename_unique(MODEL_NAME)
-    filepath = os.path.join(model_dir, f"{file_name}.h5")
+    # file_name = filename_unique(MODEL_NAME)
+    filepath = os.path.join(model_dir, f"{MODEL_NAME}.h5")
     model.save(filepath)
-    return f"{file_name}.h5"
+    return f"{MODEL_NAME}.h5"
 
 
 def plot_data(history, ARTIFACT_DIR, PLOT_DIR, PLOT_NAME):
@@ -78,6 +78,9 @@ def create_log(log_dir, x_train):
         tf.summary.image("20 hand written digit sample",
                          images, max_outputs=25, step=0)
 
+def load_models(model_path):
+    model = tf.keras.models.load_model(model_path)
+    return model
 
 def callback_function(log_dir, ARTIFACT_DIR, CKPT_MODEL):
     tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir)
@@ -91,7 +94,21 @@ def callback_function(log_dir, ARTIFACT_DIR, CKPT_MODEL):
 
 def train_model_checkpoint(ARTIFACT_DIR, CKPT_MODEL, EPOCHS, x_train, y_train, VALIDATION, CallBack_list):
     CKPT_path = f"{ARTIFACT_DIR}/checkpoint/{CKPT_MODEL}.h5"
-    ckpt_model = tf.keras.models.load_model(CKPT_path)
+    ckpt_model = load_models(CKPT_path)
     history = ckpt_model.fit(x_train, y_train, epochs=EPOCHS,
                              validation_data=VALIDATION, callbacks=CallBack_list)
     return history
+
+
+def base_model_update(model):
+    base_model = model
+    for layer in base_model.layers[:-1]:
+        print(f"Trainable status of Before {layer.name} : {layer.trainable}")
+        layer.trainable = False
+
+
+def base_model_info(model):
+    base_model = model
+    for layer in base_model.layers:
+        print(f"Trainable status of After {layer.name} : {layer.trainable}")
+

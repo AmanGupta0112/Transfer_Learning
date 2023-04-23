@@ -15,3 +15,11 @@ def create_model(LOSS_FN, OPTIMIZER, METRICS, NUM_CLASSES):
     model_clf = tf.keras.models.Sequential(LAYERS)
     model_clf.compile(loss=LOSS_FN, optimizer=OPTIMIZER, metrics=METRICS)
     return model_clf
+
+
+def recreate_model(model, LOSS_FN, OPTIMIZER, METRICS, NUM_CLASSES):
+    LAYERS = model.layers[:-1]
+    model_clf = tf.keras.models.Sequential(LAYERS)
+    model_clf.add(tf.keras.layers.Dense(2, activation='softmax', name="output"))
+    model_clf.compile(loss=LOSS_FN, optimizer=OPTIMIZER, metrics=METRICS)
+    return model_clf
