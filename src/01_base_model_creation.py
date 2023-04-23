@@ -5,6 +5,7 @@ from tqdm import tqdm
 import logging
 import tensorflow as tf
 import numpy as np
+import io
 from src.utils.common import read_yaml, create_directories
 from src.utils.data_mgmt import (get_data, save_model,
                                 plot_data,
@@ -37,7 +38,11 @@ def main(config_path):
     optimizer = tf.keras.optimizers.SGD(learning_rate=1e-3)
     model = create_model(params['loss_function'], optimizer, params['metrics'],
                          params['no_classes'])
-    logging.info(f"Model Summary : {model.summary()}")
+    def _log_model_summary(model):
+        with io.StringIO() as stream:
+            model.summary(print_fn=lambda x: stream.write(x + "\n"))
+            return stream.getvalue()
+    logging.info(f"Base model summary:{_log_model_summary(model)}")
     VALIDATION = (x_valid, y_valid)
     log_dir = get_log_path()
     create_log(log_dir, x_train)

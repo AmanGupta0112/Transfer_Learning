@@ -46,7 +46,6 @@ def plot_data(history, ARTIFACT_DIR, PLOT_DIR, PLOT_NAME):
 def predict(ARTIFACT_DIR, MODEL_DIR, MODEL_NAME, PLOT_DIR, PREDICTION_IMAGE, x_test, y_test):
     model = models.load_model(
         f"{ARTIFACT_DIR}/{MODEL_DIR}/{MODEL_NAME}")
-    model.evaluate(x_test, y_test)
     logging.info(f"Model evaluation : {model.evaluate(x_test, y_test)}")
     x_new = x_test[:30]
     y_prob = model.predict(x_new)

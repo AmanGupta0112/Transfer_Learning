@@ -9,7 +9,7 @@
 
 
 params:
-  epochs: 30
+  epochs: 10
   seed: 2021
   batch_size: 32
   no_classes: 10
